@@ -10,6 +10,8 @@ io.on('connection', (client) => {
 
     const interval = 1000; 
     let currentTime = 0;
+
+    // Clock ticks every second
     setInterval(() => {
       currentTime++;
 
@@ -17,7 +19,7 @@ io.on('connection', (client) => {
       console.log('emiting timer event at time ' + currentTime + 's');
       client.emit('clockTick', currentTime);
 
-      // Emit new orders event
+      // Emit new updates event
       const newUpdatesToBeSent = _.filter(json, newUpdate => newUpdate.sent_at_second === currentTime);
       if (newUpdatesToBeSent.length > 0) {
         console.log('emiting newUpdates event at time ' + currentTime + 's');
