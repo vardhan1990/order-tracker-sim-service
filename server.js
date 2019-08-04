@@ -6,8 +6,8 @@ io.on('connection', (client) => {
   client.on('ready', () => {
     console.log('received ready event');
     console.log('starting timer and will check for new orders every second...');
-    const interval = 1000;
-    let currentTime = 0;
+    const interval = 1000; // 1 second
+    let currentTime = 0; // start timer with 0 as initial value
     const newCard = {
       id: "01",
       name: "Cheese Pizza",
