@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Service to simulate order creation for order-tracker",
   "dependencies": {
+    "lodash": "^4.17.15",
     "socket.io": "^2.2.0"
   }
 }
