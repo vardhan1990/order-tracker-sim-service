@@ -1,0 +1,8 @@
+{
+  "name": "order-tracker-sim-service",
+  "version": "0.0.1",
+  "description": "Service to simulate order creation for order-tracker",
+  "dependencies": {
+    "socket.io": "^2.2.0"
+  }
+}
