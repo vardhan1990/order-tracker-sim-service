@@ -4,6 +4,7 @@ const io = require('socket.io')();
 
 io.on('connection', (client) => {
   console.log('user connected. waiting for ready event...');
+  let clock = null;
 
   client.on('ready', () => {
     console.log('received ready event. starting clock...');
@@ -12,7 +13,7 @@ io.on('connection', (client) => {
     let currentTime = 0;
 
     // Clock ticks every second
-    setInterval(() => {
+    clock = setInterval(() => {
       currentTime++;
 
       // Emit clock tick event
@@ -30,6 +31,7 @@ io.on('connection', (client) => {
 
   client.on('disconnect', function(){
     console.log('user disconnected');
+    clearInterval(clock);
   });
 });
 
